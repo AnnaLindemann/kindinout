@@ -15,13 +15,7 @@ const compat = new FlatCompat({ baseDirectory: __dirname });
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
+    ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
   },
   js.configs.recommended,
   { languageOptions: { parser: tsParser } },
@@ -29,14 +23,8 @@ const eslintConfig = [
   {
     rules: {
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_" },
-      ],
-      "import/order": [
-        "warn",
-        { alphabetize: { order: "asc" }, "newlines-between": "always" },
-      ],
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+      "import/order": ["warn", { alphabetize: { order: "asc" }, "newlines-between": "always" }],
     },
   },
   prettier,
