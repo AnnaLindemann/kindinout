@@ -1,0 +1,4 @@
+pnpm exec lint-staged || {
+  echo "❌ Lint failed"; exit 1;
+}
+
