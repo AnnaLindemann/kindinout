@@ -20,6 +20,18 @@ jobs:
           standalone: true
           run_install: false
 
+      - name: Resolve pnpm store path
+        id: store
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-store-
+
       - name: Install deps
         run: pnpm install --frozen-lockfile
 
@@ -34,3 +46,4 @@ jobs:
 
       - name: Build
         run: pnpm build
+
