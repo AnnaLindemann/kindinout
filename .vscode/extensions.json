@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig",
+    "bradlc.vscode-tailwindcss",
+    "Prisma.prisma",
+    "lokalise.i18n-ally",
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+    "codeium.codeium"
+  ]
+}
