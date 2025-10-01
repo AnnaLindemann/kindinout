@@ -5,33 +5,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
-      - name: Install pnpm (official script) and add to PATH
-        run: |
-          curl -fsSL https://get.pnpm.io/install.sh | bash -
-          echo "$HOME/.local/share/pnpm" >> "$GITHUB_PATH"
-          pnpm -v
+      - name: Setup pnpm (standalone)
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          standalone: true
+          run_install: false
 
-      - name: Install dependencies
+      - name: Install deps
         run: pnpm install --frozen-lockfile
 
-      - name: Type check
+      - name: Typecheck
         run: pnpm typecheck
 
       - name: Lint
         run: pnpm lint
 
-      - name: Check formatting
+      - name: Format check
         run: pnpm format:check
 
-      - name: Build project
+      - name: Build
         run: pnpm build
 
