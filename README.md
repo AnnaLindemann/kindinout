@@ -52,14 +52,12 @@ Commit Rules
 Format:
 
 bash
-Копировать код
 <type>: <subject> [#issue]
 Allowed types: feat, fix, docs, refactor, test, ci, chore.
 
 Examples:
 
 vbnet
-Копировать код
 feat: add child profile card
 fix: handle 401 on refresh #42
 docs: update onboarding guide
@@ -72,3 +70,16 @@ docs/<name>
 
 chore/<name>
 ```
+
+We use GitHub Actions (CI) for code validation.
+Each push/PR runs checks:
+
+TypeScript typecheck
+
+ESLint linting
+
+Prettier format check
+
+Project build
+
+If any step fails, CI blocks the merge until it’s fixed.
