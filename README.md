@@ -83,3 +83,28 @@ Prettier format check
 Project build
 
 If any step fails, CI blocks the merge until it’s fixed.
+VS Code Setup
+
+We include a .vscode/ folder in the repo for a consistent development environment:
+
+Auto-format on save with Prettier.
+
+ESLint fixes on save and import organization.
+
+Tailwind CSS IntelliSense, Prisma formatter, i18n-ally.
+
+ErrorLens + GitLens for better visibility and history.
+
+Optional AI helper (Cloud/Codeium) for code suggestions.
+
+👉 How to enable:
+
+Open the repo in VS Code using:
+
+code .
+
+A prompt will appear: “This workspace has recommended extensions”.
+
+Click Install All.
+
+If formatting doesn’t run on save → select Prettier as the default formatter in the status bar.
