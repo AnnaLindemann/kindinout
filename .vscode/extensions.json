@@ -7,7 +7,6 @@
     "Prisma.prisma",
     "lokalise.i18n-ally",
     "eamodio.gitlens",
-    "usernamehw.errorlens",
-    "codeium.codeium"
+    "usernamehw.errorlens"
   ]
 }
