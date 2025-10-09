@@ -41,3 +41,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+#Test
+src/lib/seed-user.ts
+src/lib/test-db.ts
